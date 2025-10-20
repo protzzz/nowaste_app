@@ -33,6 +33,9 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.4
+  flutter_bloc: ^9.1.1
+  http: ^1.5.0
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:
@@ -80,14 +83,40 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf
           weight: 900
-        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
           weight: 600
-        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto/Roboto-Light.ttf
+          weight: 300
+
+    - family: Satoshi
+      fonts:
+        - asset: assets/fonts/Satoshi/Satoshi-Black.otf
+          weight: 900
+        - asset: assets/fonts/Satoshi/Satoshi-Bold.otf
+          weight: 600
+        - asset: assets/fonts/Satoshi/Satoshi-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Satoshi/Satoshi-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Satoshi/Satoshi-Light.otf
+          weight: 300
+
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Satoshi/Satoshi-Black.otf
+          weight: 900
+        - asset: assets/fonts/Satoshi/Satoshi-Bold.otf
+          weight: 600
+        - asset: assets/fonts/Satoshi/Satoshi-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Satoshi/Satoshi-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Nunito/Nunito-Light.otf
           weight: 300
 
   # fonts:
