@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nowaste_app/core/configs/app_theme.dart';
 import 'package:nowaste_app/features/intro/pages/splash_page.dart';
 import 'package:nowaste_app/router.dart';
 
@@ -15,11 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'No Waste',
       onGenerateRoute: (settings) => generateRoute(settings),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-        ),
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: SplashPage(),
     );
   }
