@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/constants/app_colors.dart';
+import 'package:nowaste_app/core/configs/app_colors.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
@@ -68,16 +68,16 @@ class AppTheme {
       visualDensity: VisualDensity.compact, // компактнее
       materialTapTargetSize:
           MaterialTapTargetSize.shrinkWrap, // меньше hitbox
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      fillColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.lightGreen;
         }
-        if (states.contains(MaterialState.hovered)) {
+        if (states.contains(WidgetState.hovered)) {
           return AppColors.lightGreen.withOpacity(0.2);
         }
         return Colors.white24;
       }),
-      checkColor: MaterialStatePropertyAll(Colors.white),
+      checkColor: WidgetStatePropertyAll(Colors.white),
     ),
   );
 
