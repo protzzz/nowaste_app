@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/constants/app_colors.dart';
+import 'package:nowaste_app/core/configs/app_colors.dart';
 import 'package:nowaste_app/core/extensions/navx.dart';
 import 'package:nowaste_app/features/home/pages/home_page.dart';
 import 'package:nowaste_app/features/intro/widgets/next_button.dart';
