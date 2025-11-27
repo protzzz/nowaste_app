@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/constants/app_colors.dart';
+import 'package:nowaste_app/core/configs/app_colors.dart';
 import 'package:nowaste_app/features/auth/widgets/blur_blob.dart';
 
 class GlowBackground extends StatelessWidget {
