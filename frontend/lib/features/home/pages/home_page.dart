@@ -14,7 +14,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: BigAppIcon(), centerTitle: true),
-      body: Center(child: Text('Home Page')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Text("NoWaste"),
+                  Text("Smart Kitchen Assistant"),
+                ],
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  border: Border(),
+                  // borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
