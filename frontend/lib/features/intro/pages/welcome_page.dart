@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/configs/app_images.dart';
-import 'package:nowaste_app/core/constants/app_colors.dart';
+import 'package:nowaste_app/core/configs/app_colors.dart';
 import 'package:nowaste_app/core/extensions/navx.dart';
 import 'package:nowaste_app/core/widgets/big_app_icon.dart';
 import 'package:nowaste_app/features/auth/pages/signup_page.dart';
