@@ -6,8 +6,8 @@ export const users = pgTable("users", {
   surname: text("surname").notNull(),
   email: text("email").unique().notNull(),
   password: text("password").notNull(),
-  created_at: timestamp("created_at").defaultNow(),
-  updated_at: timestamp("updated_at").defaultNow(),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
 export type User = typeof users.$inferSelect;
