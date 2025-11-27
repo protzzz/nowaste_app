@@ -5,16 +5,23 @@ export function formatUser(user: User) {
   // export function formatUser(user?: User | null)
   if (!user) return null;
 
+  const { password, ...rest } = user;
+
   return {
-    id: user.id,
-    name: user.name,
-    surname: user.surname,
-    email: user.email,
-    created_at: user.created_at
-      ? dayjs(user.created_at).format("DD-MM-YYYY HH:mm:ss")
+    ...rest,
+    createdAt: user.createdAt
+      ? dayjs(user.createdAt).format("DD-MM-YYYY HH:mm:ss")
       : null,
-    updated_at: user.updated_at
-      ? dayjs(user.updated_at).format("DD-MM-YYYY HH:mm:ss")
+    updatedAt: user.updatedAt
+      ? dayjs(user.updatedAt).format("DD-MM-YYYY HH:mm:ss")
       : null,
   };
+}
+
+export function userWithoutPassword(user: User) {
+  if (!user) return null;
+
+  const { password, ...rest } = user;
+
+  return rest;
 }
