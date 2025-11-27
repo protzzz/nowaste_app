@@ -49,3 +49,4 @@ lib/features/demo/
 
 # Flutter DevTools settings
 devtools_options.yaml
+.vscode
