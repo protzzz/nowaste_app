@@ -10,4 +10,15 @@ class SharedPreferencesService {
     final preferences = await SharedPreferences.getInstance();
     return preferences.getString('x-auth-token');
   }
+
+  Future<bool> isFirstLaunch() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasOnboarded = prefs.getBool('hasOnboarded') ?? false;
+    return !hasOnboarded;
+  }
+
+  Future<void> setHasOnboarded() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('hasOnboarded', true);
+  }
 }
