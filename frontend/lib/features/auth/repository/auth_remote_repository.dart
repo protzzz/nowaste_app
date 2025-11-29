@@ -30,16 +30,6 @@ class AuthRemoteRepository {
         throw jsonDecode(res.body)['error'];
       }
 
-      // if (res.statusCode != 201) {
-      //   final decoded = jsonDecode(res.body);
-      //   final message = decoded['error'] ?? 'Unknown error';
-      //   throw ApiException(
-      //     message,
-      //     statusCode: res.statusCode,
-      //     uri: Uri.parse('${Constants.backendUri}/auth/signup'),
-      //   );
-      // }
-
       return UserModel.fromJson(res.body);
     } catch (error) {
       if (error is ApiException) rethrow;
@@ -62,16 +52,6 @@ class AuthRemoteRepository {
         throw jsonDecode(res.body)['error'];
       }
 
-      // if (res.statusCode != 200) {
-      //   final decoded = jsonDecode(res.body);
-      //   final message = decoded['error'] ?? 'Unknown error';
-      //   throw ApiException(
-      //     message,
-      //     statusCode: res.statusCode,
-      //     uri: Uri.parse('${Constants.backendUri}/auth/login'),
-      //   );
-      // }
-
       // print(jsonDecode(res.body));
       return UserModel.fromJson(res.body);
     } catch (error) {
@@ -83,6 +63,7 @@ class AuthRemoteRepository {
   Future<UserModel?> getUserData() async {
     try {
       final token = await sharedPreferencesService.getToken();
+      // print('TOKEN FROM STORAGE: $token');
 
       if (token == null) {
         return null;
@@ -95,6 +76,7 @@ class AuthRemoteRepository {
           'x-auth-token': token,
         },
       );
+      // print('tokenIsValid: ${res.statusCode} ${res.body}');
 
       if (res.statusCode != 200 || jsonDecode(res.body) == false) {
         return null;
@@ -107,14 +89,21 @@ class AuthRemoteRepository {
           'x-auth-token': token,
         },
       );
+      // print(
+      //   'GET /auth: ${userResponse.statusCode} ${userResponse.body}',
+      // );
 
       if (userResponse.statusCode != 200) {
         throw jsonDecode(userResponse.body)['error'];
       }
 
-      print(jsonDecode(userResponse.body)['user']);
-      return UserModel.fromJson(userResponse.body);
+      // print(jsonDecode(userResponse.body)['user']);
+      // return UserModel.fromJson(userResponse.body);
+
+      final user = jsonDecode(userResponse.body)['user'];
+      return UserModel.fromJson(jsonEncode(user));
     } catch (error) {
+      // print('getUserData error: $error');
       if (error is ApiException) rethrow;
       throw ApiException(error.toString());
     }
