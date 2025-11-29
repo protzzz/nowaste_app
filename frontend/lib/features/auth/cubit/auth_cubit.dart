@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthLoading());
 
       final userModel = await authRemoteRepository.getUserData();
-      // print(userModel);
+      print('CUBIT getUserData userModel: $userModel');
 
       if (userModel != null) {
         emit(AuthLoggedIn(userModel));
@@ -23,29 +23,10 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthInitial());
       }
     } catch (error) {
+      // print('CUBIT getUserData error: $error');
       emit(AuthError(error.toString()));
     }
   }
-
-  // Future<UserModel?> getUserData() async {
-  //   try {
-  //     emit(AuthLoading());
-
-  //     final userModel = await authRemoteRepository.getUserData();
-  //     print(userModel);
-
-  //     if (userModel == null) {
-  //       emit(AuthInitial());
-  //       return null;
-  //     } else {
-  //       emit(AuthLoggedIn(userModel));
-  //       return userModel;
-  //     }
-  //   } catch (e) {
-  //     emit(AuthError(e.toString()));
-  //     return null;
-  //   }
-  // }
 
   void signUp({
     required String name,
