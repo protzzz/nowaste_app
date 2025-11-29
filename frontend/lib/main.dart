@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowaste_app/core/configs/app_theme.dart';
 import 'package:nowaste_app/features/auth/cubit/auth_cubit.dart';
-import 'package:nowaste_app/features/home/pages/home_page.dart';
 import 'package:nowaste_app/features/intro/pages/splash_page.dart';
 import 'package:nowaste_app/router.dart';
 
@@ -24,12 +23,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  void initState() {
-    super.initState();
-    context.read<AuthCubit>().getUserData();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -38,14 +31,6 @@ class _MyAppState extends State<MyApp> {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       home: SplashPage(),
-      // home: BlocBuilder<AuthCubit, AuthState>(
-      //   builder: (context, state) {
-      //     if (state is AuthLoggedIn) {
-      //       return HomePage();
-      //     }
-      //     return SplashPage();
-      //   },
-      // ),
     );
   }
 }
