@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withOpacity(0.40),
+                  Colors.black.withValues(alpha: 0.40),
                   Colors.transparent,
                 ],
               ),
@@ -178,8 +178,9 @@ class _LoginPageState extends State<LoginPage> {
                                   Text(
                                     'Remember me',
                                     style: TextStyle(
-                                      color: Colors.white
-                                          .withOpacity(0.9),
+                                      color: Colors.white.withValues(
+                                        alpha: 0.9,
+                                      ),
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -203,8 +204,8 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text(
                                 'Forgot Password?',
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(
-                                    0.9,
+                                  color: Colors.white.withValues(
+                                    alpha: 0.9,
                                   ),
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,
@@ -286,7 +287,11 @@ class _LoginPageState extends State<LoginPage> {
                                 //         ? Colors.white
                                 //         : Colors.black,
                                 width: 37,
-                                color: Colors.white,
+                                // color: Colors.white,
+                                colorFilter: ColorFilter.mode(
+                                  Colors.white,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ),
                           ],

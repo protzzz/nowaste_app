@@ -39,7 +39,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintStyle: const TextStyle(color: Colors.white70),
         contentPadding: const EdgeInsets.all(20),
         filled: true,
-        fillColor: Colors.white.withOpacity(0.05),
+        fillColor: Colors.white.withValues(alpha: 0.05),
         suffixIcon:
             isPassword
                 ? Padding(

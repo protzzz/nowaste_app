@@ -11,7 +11,7 @@ class AppTheme {
       contentPadding: const EdgeInsets.all(20),
 
       filled: true,
-      fillColor: Colors.white.withOpacity(0.25),
+      fillColor: Colors.white.withValues(alpha: 0.25),
 
       errorStyle: TextStyle(
         color: Colors.red.shade800,
@@ -73,7 +73,7 @@ class AppTheme {
           return AppColors.lightGreen;
         }
         if (states.contains(WidgetState.hovered)) {
-          return AppColors.lightGreen.withOpacity(0.2);
+          return AppColors.lightGreen.withValues(alpha: 0.2);
         }
         return Colors.white24;
       }),

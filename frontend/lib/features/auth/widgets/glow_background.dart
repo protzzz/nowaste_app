@@ -4,7 +4,7 @@ import 'package:nowaste_app/features/auth/widgets/blur_blob.dart';
 
 class GlowBackground extends StatelessWidget {
   final Widget child;
-  const GlowBackground({required this.child});
+  const GlowBackground({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class GlowBackground extends StatelessWidget {
                 center: const Alignment(0, -0.2),
                 radius: 1.25,
                 colors: [
-                  AppColors.lightGreen.withOpacity(0.85),
-                  AppColors.primary.withOpacity(0.90),
+                  AppColors.lightGreen.withValues(alpha: 0.85),
+                  AppColors.primary.withValues(alpha: 0.90),
                   AppColors.darkBackground,
                 ],
                 stops: const [0.0, 0.45, 1.0],
@@ -51,9 +51,9 @@ class GlowBackground extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withOpacity(0.20),
+                  Colors.black.withValues(alpha: 0.20),
                   Colors.transparent,
-                  Colors.black.withOpacity(0.40),
+                  Colors.black.withValues(alpha: 0.40),
                 ],
                 stops: const [0.0, 0.5, 1.0],
               ),

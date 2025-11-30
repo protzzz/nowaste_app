@@ -153,7 +153,6 @@ class _IntroPageState extends State<IntroPage> {
                               curve: Curves.easeInOut,
                             );
                           } else {
-                            // TODO: перейти на домашнюю страницу
                             // Navigator.pushReplacementNamed(context, HomePage.routeName);
                           }
                         },

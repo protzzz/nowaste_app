@@ -8,6 +8,7 @@ class BlurBlob extends StatelessWidget {
   final double opacity;
 
   const BlurBlob({
+    super.key,
     required this.color,
     required this.size,
     required this.offset,
@@ -25,7 +26,7 @@ class BlurBlob extends StatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: color.withOpacity(opacity),
+            color: color.withValues(alpha: opacity),
             shape: BoxShape.circle,
           ),
         ),

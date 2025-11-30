@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withOpacity(0.40),
+                  Colors.black.withValues(alpha: 0.40),
                   Colors.transparent,
                 ],
               ),
@@ -272,7 +272,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 //         ? Colors.white
                                 //         : Colors.black,
                                 width: 37,
-                                color: Colors.white,
+                                // color: Colors.white,
+                                colorFilter: ColorFilter.mode(
+                                  Colors.white,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ),
                           ],

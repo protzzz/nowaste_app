@@ -6,10 +6,8 @@ import 'package:nowaste_app/core/extensions/navx.dart';
 import 'package:nowaste_app/core/services/shared_preferences_service.dart';
 import 'package:nowaste_app/features/auth/cubit/auth_cubit.dart';
 import 'package:nowaste_app/features/auth/pages/login_page.dart';
-import 'package:nowaste_app/features/auth/pages/signup_page.dart';
 import 'package:nowaste_app/features/home/pages/home_page.dart';
 import 'package:nowaste_app/features/intro/widgets/splash_animated_container.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashPage extends StatefulWidget {
   static const String routeName = '/splash-page';
@@ -59,6 +57,8 @@ class _SplashScreenState extends State<SplashPage>
         print("State is $state");
 
         await Future.delayed(Duration(seconds: 2));
+
+        if (!context.mounted) return;
 
         // Future code for OnboardingPage settings
         // if (_isFirstLaunch) {
