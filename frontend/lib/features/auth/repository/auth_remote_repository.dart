@@ -3,10 +3,12 @@ import 'package:http/http.dart' as http;
 import 'package:nowaste_app/core/constants/api_exception.dart';
 import 'package:nowaste_app/core/constants/constants.dart';
 import 'package:nowaste_app/core/services/shared_preferences_service.dart';
+import 'package:nowaste_app/features/auth/repository/auth_local_repository.dart';
 import 'package:nowaste_app/models/user_model.dart';
 
 class AuthRemoteRepository {
   final sharedPreferencesService = SharedPreferencesService();
+  final authLocalRepository = AuthLocalRepository();
 
   Future<UserModel> signUp({
     required String name,
@@ -63,7 +65,7 @@ class AuthRemoteRepository {
   Future<UserModel?> getUserData() async {
     try {
       final token = await sharedPreferencesService.getToken();
-      // print('TOKEN FROM STORAGE: $token');
+      print('TOKEN FROM STORAGE: $token');
 
       if (token == null) {
         return null;
@@ -103,9 +105,13 @@ class AuthRemoteRepository {
       final user = jsonDecode(userResponse.body)['user'];
       return UserModel.fromJson(jsonEncode(user));
     } catch (error) {
+      final user = await authLocalRepository.getUser();
+      print(user);
+
+      return user;
       // print('getUserData error: $error');
-      if (error is ApiException) rethrow;
-      throw ApiException(error.toString());
+      // if (error is ApiException) rethrow;
+      // throw ApiException(error.toString());
     }
   }
 }
