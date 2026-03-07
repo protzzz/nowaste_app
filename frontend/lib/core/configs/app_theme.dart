@@ -19,34 +19,33 @@ class AppTheme {
         fontWeight: FontWeight.w500,
       ),
 
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25),
-        borderSide: BorderSide(color: Colors.white24),
-      ),
-
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25),
-        borderSide: BorderSide(color: Colors.white24),
-      ),
-
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25),
-        borderSide: BorderSide(
-          color: AppColors.lightGreen,
-          width: 2,
-        ),
-      ),
-
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25),
-        borderSide: BorderSide(color: Colors.red.shade800, width: 1),
-      ),
-
-      focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25),
-        borderSide: BorderSide(color: Colors.red.shade800, width: 2),
-      ),
+      // OutlineInputBorder
+      // border: OutlineInputBorder(
+      //   borderRadius: BorderRadius.circular(10),
+      //   borderSide: BorderSide(color: Colors.white24),
+      // ),
+      //   enabledBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.circular(25),
+      //     borderSide: BorderSide(color: Colors.white24),
+      //   ),
+      //   focusedBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.circular(25),
+      //     borderSide: BorderSide(
+      //       color: AppColors.lightGreen,
+      //       width: 2,
+      //     ),
+      //   ),
+      //   errorBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.circular(25),
+      //     borderSide: BorderSide(color: Colors.red.shade800, width: 1),
+      //   ),
+      //   focusedErrorBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.circular(25),
+      //     borderSide: BorderSide(color: Colors.red.shade800, width: 2),
+      //   ),
     ),
+
+    // ElevatedButtonTheme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.lightGreen,
@@ -57,6 +56,7 @@ class AppTheme {
       ),
     ),
 
+    // CheckboxTheme
     checkboxTheme: CheckboxThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4),
@@ -78,6 +78,14 @@ class AppTheme {
         return Colors.white24;
       }),
       checkColor: WidgetStatePropertyAll(Colors.white),
+    ),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      // selectedItemColor: Colors.lightGreenAccent,
+      selectedItemColor: Color(0xFF4CAF50),
+      unselectedItemColor: Colors.grey,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
     ),
   );
 
