@@ -35,6 +35,31 @@ class _CustomTextFieldState extends State<CustomTextField> {
       cursorColor: AppColors.lightGreen,
       obscureText: isPassword ? !_isPasswordVisible : false,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(color: Colors.white24),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: AppColors.lightGreen,
+            width: 2,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: Colors.red.shade800,
+            width: 1,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: Colors.red.shade800,
+            width: 2,
+          ),
+        ),
         hintText: widget.hintText,
         hintStyle: const TextStyle(color: Colors.white70),
         contentPadding: const EdgeInsets.all(20),
