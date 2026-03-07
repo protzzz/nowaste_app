@@ -45,6 +45,7 @@ app.*.map.json
 /android/app/release
 
 assets/icons/*
+assets/vectors/*
 lib/features/demo/
 
 # Flutter DevTools settings
