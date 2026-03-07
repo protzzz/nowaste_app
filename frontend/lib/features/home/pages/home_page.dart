@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/widgets/big_app_icon.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nowaste_app/core/configs/app_colors.dart';
+import 'package:nowaste_app/features/home/fridge/pages/fridge_page.dart';
+import 'package:nowaste_app/features/home/navigation/cubit/navigation_cubit.dart';
+import 'package:nowaste_app/features/home/navigation/widget/bottom_nav_bar.dart';
+import 'package:nowaste_app/features/home/navigation/widget/center_fab_button.dart';
+import 'package:nowaste_app/features/home/recipes/pages/recipes_page.dart';
+import 'package:nowaste_app/features/home/settings/pages/settings_page.dart';
+import 'package:nowaste_app/features/home/shopping/pages/shopping_page.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = '/home-page';
@@ -12,31 +20,42 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: BigAppIcon(), centerTitle: true),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Text("NoWaste"),
-                  Text("Smart Kitchen Assistant"),
-                ],
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  border: Border(),
-                  // borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ],
+    return BlocBuilder<NavigationCubit, NavigationItem>(
+      builder: (context, state) {
+        Widget page;
+
+        switch (state) {
+          case NavigationItem.fridge:
+            page = const FridgePage();
+            break;
+          case NavigationItem.recipes:
+            page = const RecipesPage();
+            break;
+          case NavigationItem.settings:
+            page = const SettingsPage();
+            break;
+          case NavigationItem.notifications:
+            page = const ShoppingPage();
+            break;
+        }
+
+        return Scaffold(
+          body: page,
+          backgroundColor: Colors.grey.shade100,
+          // backgroundColor: Colors.white,
+
+          // 'Add' FloatingActionButton
+          floatingActionButton: Transform.translate(
+            offset: Offset(0, 12),
+            child: CenterFabButton(onPressed: () {}),
           ),
-        ],
-      ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+
+          // BottomNavigationBar
+          bottomNavigationBar: BottomNavBar(),
+        );
+      },
     );
   }
 }
