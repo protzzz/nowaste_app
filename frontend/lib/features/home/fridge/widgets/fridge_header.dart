@@ -19,6 +19,7 @@ class FridgeHeader extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text(
                       'NoWaste',
@@ -57,29 +58,34 @@ class FridgeHeader extends StatelessWidget {
             children: const [
               Expanded(
                 child: GroceryStatus(
-                  dotColor: Color(0xFF22C55E),
+                  icon: Icons.check,
+                  iconBackgoundColor: Color(0xFF22C55E),
+                  iconSize: 19,
                   title: 'Fresh',
                   itemCount: '6 items',
                   backgroundColor: Color(0xFFE7F8EC),
                   borderColor: Color(0xFFBDECCB),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: 8),
               Expanded(
                 child: GroceryStatus(
-                  dotColor: Color(0xFFFBBF24),
+                  icon: Icons.priority_high,
+                  iconBackgoundColor: Color(0xFFFBBF24),
                   title: 'Expiring',
                   itemCount: '1 item',
                   backgroundColor: Color(0xFFFFF1DB),
                   borderColor: Color(0xFFF2D3A8),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: 8),
               Expanded(
                 child: GroceryStatus(
-                  dotColor: Color(0xFFEF4444),
+                  icon: Icons.error_outline,
+                  iconBackgoundColor: Color(0xFFEF4444),
                   title: 'Urgent',
                   itemCount: '1 item',
+                  iconSize: 23,
                   backgroundColor: Color(0xFFFFE1E1),
                   borderColor: Color(0xFFF2B6B6),
                 ),
