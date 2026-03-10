@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowaste_app/core/configs/app_images.dart';
+import 'package:nowaste_app/core/configs/app_icons.dart';
 
 class BigAppIcon extends StatelessWidget {
   final double fontSize;
@@ -33,7 +33,7 @@ class BigAppIcon extends StatelessWidget {
                 // color: textColor,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
-                fontFamily: 'Nunito',
+                // fontFamily: 'Nunito',
                 foreground:
                     Paint()
                       ..style = PaintingStyle.stroke
@@ -50,7 +50,7 @@ class BigAppIcon extends StatelessWidget {
                   color: textColor,
                   fontSize: fontSize,
                   fontWeight: FontWeight.w600,
-                  fontFamily: 'Nunito',
+                  // fontFamily: 'Nunito',
                   // fontFamily: 'Roboto',
                   // fontFamily: 'Satoshi',
                 ),

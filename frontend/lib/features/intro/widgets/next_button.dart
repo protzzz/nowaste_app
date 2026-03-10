@@ -85,7 +85,7 @@ class _NextButtonState extends State<NextButton>
                 style: const TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.w800,
-                  fontFamily: 'Nunito',
+                  // fontFamily: 'Nunito',
                   color: Colors.white,
                 ),
               ),

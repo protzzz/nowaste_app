@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nowaste_app/core/configs/app_images.dart';
+import 'package:nowaste_app/core/configs/app_icons.dart';
 import 'package:nowaste_app/core/configs/app_colors.dart';
 import 'package:nowaste_app/core/extensions/navx.dart';
 import 'package:nowaste_app/core/services/shared_preferences_service.dart';
@@ -128,7 +128,7 @@ class _SplashScreenState extends State<SplashPage>
                             color: Colors.white,
                             // fontFamily: 'Roboto',
                             // fontFamily: 'Satoshi',
-                            fontFamily: 'Nunito',
+                            // fontFamily: 'Nunito',
                             wordSpacing: -10,
                           ),
                         ),

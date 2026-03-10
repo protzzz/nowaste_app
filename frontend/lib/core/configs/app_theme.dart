@@ -5,7 +5,7 @@ class AppTheme {
   static final lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: AppColors.primary,
-    fontFamily: 'Nunito',
+    // fontFamily: 'Nunito',
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: TextStyle(color: Colors.white70),
       contentPadding: const EdgeInsets.all(20),
@@ -92,6 +92,6 @@ class AppTheme {
   static final darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: AppColors.primary,
-    fontFamily: 'Nunito',
+    // fontFamily: 'Nunito',
   );
 }

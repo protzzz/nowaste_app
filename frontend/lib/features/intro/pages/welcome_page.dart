@@ -36,7 +36,7 @@ class _WelcomePageState extends State<WelcomePage> {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
-                fontFamily: 'Nunito',
+                // fontFamily: 'Nunito',
                 fontWeight: FontWeight.w700,
               ),
             ),

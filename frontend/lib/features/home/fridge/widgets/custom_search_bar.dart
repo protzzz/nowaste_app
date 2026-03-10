@@ -38,7 +38,7 @@ class CustomSearchBar extends StatelessWidget {
             color: Colors.grey,
             fontSize: 15,
             fontWeight: FontWeight.w500,
-            fontFamily: 'Satoshi',
+            // fontFamily: 'Satoshi',
           ),
         ),
       ),

@@ -26,7 +26,7 @@ class FridgeHeader extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'Satoshi',
+                        // fontFamily: 'Satoshi',
                       ),
                     ),
                     SizedBox(height: 4),
