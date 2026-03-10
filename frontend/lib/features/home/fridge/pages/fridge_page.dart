@@ -65,6 +65,24 @@ class FridgePage extends StatelessWidget {
         statusDot: Color(0xFF22C55E),
         emoji: '🍚',
       ),
+      GroceryItem(
+        name: 'Eggs',
+        amount: '12 pcs',
+        badgeText: '7 days left',
+        badgeBg: Color(0xFFE7F8EC),
+        badgeFg: Color(0xFF166534),
+        statusDot: Color(0xFF22C55E),
+        emoji: '🥚',
+      ),
+      GroceryItem(
+        name: 'Yogurt',
+        amount: '150g',
+        badgeText: 'Use today!',
+        badgeBg: Color(0xFFFFE1E1),
+        badgeFg: Color(0xFFB91C1C),
+        statusDot: Color(0xFFEF4444),
+        emoji: '🥣',
+      ),
     ];
 
     return CustomScrollView(
