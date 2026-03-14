@@ -17,8 +17,7 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashPage>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashPage> with SingleTickerProviderStateMixin {
   // first init check
   final _sharedPreferencesService = SharedPreferencesService();
   bool _isFirstLaunch = false;
@@ -72,9 +71,7 @@ class _SplashScreenState extends State<SplashPage>
         } else if (state is AuthInitial) {
           context.replaceWith(LoginPage.routeName);
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(state.error)));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error)));
         }
       },
       child: Scaffold(
@@ -116,10 +113,7 @@ class _SplashScreenState extends State<SplashPage>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          width: 100,
-                          AppImages.splashIcon,
-                        ),
+                        Image.asset(width: 100, AppIcons.splashIcon),
                         Text(
                           'No Waste',
                           style: TextStyle(
@@ -154,42 +148,37 @@ class _SplashScreenState extends State<SplashPage>
   }
 
   void _initAnimations() {
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 5),
-    )..repeat(reverse: true);
+    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 5))
+      ..repeat(reverse: true);
 
     _alignment1 = Tween<Alignment>(
       begin: Alignment.topLeft,
       end: Alignment.centerLeft,
-    ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     _alignment2 = Tween<Alignment>(
       begin: Alignment.centerRight,
       end: Alignment.topCenter,
-    ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     _alignment3 = Tween<Alignment>(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
-    ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
-    _radius1 = Tween<double>(begin: 0.4, end: 0.6).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _radius1 = Tween<double>(
+      begin: 0.4,
+      end: 0.6,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
-    _radius2 = Tween<double>(begin: 0.3, end: 0.5).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _radius2 = Tween<double>(
+      begin: 0.3,
+      end: 0.5,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
-    _radius3 = Tween<double>(begin: 0.5, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _radius3 = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 }
