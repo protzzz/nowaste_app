@@ -23,7 +23,7 @@ class BigAppIcon extends StatelessWidget {
       // mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AppImages.splashIcon, width: 60),
+        Image.asset(AppIcons.splashIcon, width: 60),
         const SizedBox(width: 8),
         Stack(
           children: [
