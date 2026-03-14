@@ -92,18 +92,9 @@ class FridgePage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border(
-                bottom: BorderSide(
-                  color: AppColors.primary,
-                  width: 1.2,
-                ),
-                right: BorderSide(
-                  color: AppColors.primary,
-                  width: 0.3,
-                ),
-                left: BorderSide(
-                  color: AppColors.primary,
-                  width: 0.3,
-                ),
+                bottom: BorderSide(color: AppColors.primary, width: 1.2),
+                right: BorderSide(color: AppColors.primary, width: 0.3),
+                left: BorderSide(color: AppColors.primary, width: 0.3),
               ),
               borderRadius: BorderRadius.circular(25),
             ),
@@ -112,30 +103,27 @@ class FridgePage extends StatelessWidget {
         ),
 
         SliverToBoxAdapter(
-          child: Container(
-            padding: EdgeInsets.only(top: 6),
-            child: GroceryFilterChips(),
-          ),
+          child: Container(padding: EdgeInsets.only(top: 6), child: GroceryFilterChips()),
         ),
 
         // Slive
-        SliverPadding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          sliver: SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) =>
-                  GroceryItemCard(item: items[index]),
-              childCount: items.length,
-            ),
-            gridDelegate:
-                const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 14,
-                  crossAxisSpacing: 14,
-                  mainAxisExtent: 130,
-                ),
-          ),
-        ),
+        // SliverPadding(
+        //   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+        //   sliver: SliverGrid(
+        //     delegate: SliverChildBuilderDelegate(
+        //       (context, index) =>
+        //           GroceryItemCard(item: items[index]),
+        //       childCount: items.length,
+        //     ),
+        //     gridDelegate:
+        //         const SliverGridDelegateWithFixedCrossAxisCount(
+        //           crossAxisCount: 2,
+        //           mainAxisSpacing: 14,
+        //           crossAxisSpacing: 14,
+        //           mainAxisExtent: 130,
+        //         ),
+        //   ),
+        // ),
 
         // SliverToBoxAdapter(
         //   child: Container(
