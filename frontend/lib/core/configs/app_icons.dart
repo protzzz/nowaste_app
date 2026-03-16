@@ -15,4 +15,7 @@ class AppIcons {
   static const String cookingFilled = '$basePath/navigation-bar/cooking-filled$formatPNG';
   static const String settings = '$basePath/navigation-bar/settings$formatPNG';
   static const String settingsFilled = '$basePath/navigation-bar/settings-filled$formatPNG';
+  static const String search = '$basePath/navigation-bar/search$formatPNG';
+  static const String searchFilled = '$basePath/navigation-bar/search-filled$formatPNG';
+  static const String searchFilled2 = '$basePath/navigation-bar/search-filled2$formatPNG';
 }
