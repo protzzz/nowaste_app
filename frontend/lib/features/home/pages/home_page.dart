@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nowaste_app/features/home/addProduct/pages/add_product.dart';
 import 'package:nowaste_app/features/home/fridge/pages/fridge_page.dart';
 import 'package:nowaste_app/features/home/navigation/cubit/navigation_cubit.dart';
-import 'package:nowaste_app/features/home/navigation/widget/app_bottom_bar.dart';
+import 'package:nowaste_app/features/home/navigation/widget/custom_nav_bar.dart';
 import 'package:nowaste_app/features/home/recipes/pages/recipes_page.dart';
+import 'package:nowaste_app/features/home/search/pages/search_page.dart';
 import 'package:nowaste_app/features/home/settings/pages/settings_page.dart';
 import 'package:nowaste_app/features/home/shopping/pages/shopping_page.dart';
 
@@ -35,12 +37,18 @@ class _HomePageState extends State<HomePage> {
           case NavigationItem.notifications:
             page = const ShoppingPage();
             break;
+          case NavigationItem.addProduct:
+            page = const AddProduct();
+            break;
+          case NavigationItem.search:
+            page = const SearchPage();
+            break;
         }
 
         return Scaffold(
           extendBody: true,
           body: SafeArea(top: false, bottom: false, child: page),
-          bottomNavigationBar: AppBottomBar(),
+          bottomNavigationBar: CustomNavigationBar(),
           // floatingActionButton: ,
           // floatingActionButtonLocation: ,
 
