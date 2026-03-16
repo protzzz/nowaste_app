@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NavBarItem extends StatelessWidget {
-  final String label;
+  final String? label;
   final String iconPath;
   final VoidCallback onTap;
   final bool isSelected;
@@ -12,7 +12,7 @@ class NavBarItem extends StatelessWidget {
 
   const NavBarItem({
     super.key,
-    required this.label,
+    this.label,
     required this.iconPath,
     required this.onTap,
     required this.isSelected,
@@ -28,27 +28,24 @@ class NavBarItem extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         behavior: HitTestBehavior.opaque,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOut,
+        child: Container(
           padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-          decoration: BoxDecoration(
-            color:
-                isSelected
-                    // ? Color(0xFFF2F2F7)
-                    ? const Color.fromARGB(239, 238, 238, 238)
-                    : Colors.transparent,
-            borderRadius: BorderRadius.circular(40),
-          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               _buildIcon(),
-              const SizedBox(height: 3),
-              Text(
-                label,
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: color),
-              ),
+              if (label != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Text(
+                    label!,
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                      color: color,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
